@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="quiz-container box overlay0 post">
+            <h1 >Welcome to Quiz App</h1>
+            <p>This is a Quiz to test out your knowledge about HTML, CSS and JavaScript <br>
+                There will be a 45 seconds timer for each question<br>
+                "Next" is auto submit<br><br>
+                Are you ready to test out your knowledge?<br>
+                If yes Click on "Start the quiz!" button below to begin.</p><br>
+            <button id="startBtn" onclick="startQuestion()">Start the quiz!</button>
+        </div>
+        <div class="quiz-container box1 overlay6 post">
+            <h1>Congrats You finished the test</h1>
+            <h3>Your score is: <span id="score"></span> out of 5</h3>
+            <div class="btngroup2">
+                <button id="startBtn" class="restart" onclick="restart()">Restart Quiz!</button>
+            </div>
+        </div>
+        <div class="quiz-container overlay1 post" id="question1">
+            <h1>Quiz</h1>
+            <div id="timer1" class="timer"></div><br>
+            <div class="quiz">
+                <h2 id="question">1. What does HTML stand for?</h2>
+                <div class="answerBtn">
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices1', 'radio1.1')">
+                            <label>
+                                <input type="radio" value="a" name="choices1" id="radio1.1"> A) Hyperlink Text Markup Language
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices1', 'radio2.1')">
+                            <label>
+                                <input type="radio" value="b" name="choices1" id="radio2.1"> B) Hypertext Markup Language
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices1', 'radio3.1')">
+                            <label>
+                                <input type="radio" value="c" name="choices1" id="radio3.1"> C) High-Level Text Management Language
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices1', 'radio4.1')">
+                            <label>
+                                <input type="radio" value="d" name="choices1" id="radio4.1"> D) Hyper Transferable Markup Language
+                            </label>
+                        </div>
+                    </div>
+                    <p class="answer"></p>
+                </div>
+                <div class="subnext">
+                    <button id="submit-btn"  onclick="submitAnswer(1)">Submit</button>
+                    <button id="next-btn" onclick="questionTransition(2)">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-container overlay2 post" id="question2">
+            <h1>Quiz</h1>
+            <div id="timer2" class="timer"></div><br>
+            <div class="quiz">
+                <h2 id="question">2. Which property is used to change the text color in CSS?</h2>
+                <div class="answerBtn">
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices2', 'radio1.2')">
+                            <label>
+                                <input type="radio" value="a" name="choices2" id="radio1.2"> A) text-style
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices2', 'radio2.2')">
+                            <label>
+                                <input type="radio" value="b" name="choices2" id="radio2.2"> B) color
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices2', 'radio3.2')">
+                            <label>
+                                <input type="radio" value="c" name="choices2" id="radio3.2"> C) font-color
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices2', 'radio4.2')">
+                            <label>
+                                <input type="radio" value="d" name="choices2" id="radio4.2"> D) text-color
+                            </label>
+                        </div>
+                    </div>
+                    <p class="answer"></p>
+                </div>
+                <div class="subnext">
+                    <button id="submit-btn"  onclick="submitAnswer(2)">Submit</button>
+                    <button id="next-btn" onclick="questionTransition(3)">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-container overlay3 post" id="question3">
+            <h1>Quiz</h1>
+            <div id="timer3" class="timer"></div><br>
+            <div class="quiz">
+                <h2 id="question">3. What is the purpose of the "document.getElementById()" method in JavaScript?</h2>
+                <div class="answerBtn">
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices3', 'radio1.3')">
+                            <label>
+                                <input type="radio" value="a" name="choices3" id="radio1.3"> A) It gets the value of an input field.
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices3', 'radio2.3')">
+                            <label>
+                                <input type="radio" value="b" name="choices3" id="radio2.3"> B) It changes the style of an element.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices3', 'radio3.3')">
+                            <label>
+                                <input type="radio" value="c" name="choices3" id="radio3.3"> C) It retrieves an HTML element by its id
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices3', 'radio4.3')">
+                            <label>
+                                <input type="radio" value="d" name="choices3" id="radio4.3"> D) It creates a new HTML element.
+                            </label>
+                        </div>
+                    </div>
+                    <p class="answer"></p>
+                </div>
+                <div class="subnext">
+                    <button id="submit-btn"  onclick="submitAnswer(3)">Submit</button>
+                    <button id="next-btn" onclick="questionTransition(4)">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-container overlay4 post" id="question4">
+            <h1>Quiz</h1>
+            <div id="timer4" class="timer"></div><br>
+            <div class="quiz">
+                <h2 id="question">4. How can you select an element with the class name "example" in CSS?</h2>
+                <div class="answerBtn">
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices4', 'radio1.4')">
+                            <label>
+                                <input type="radio" value="a" name="choices4" id="radio1.4"> A) #example </input>
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices4', 'radio2.4')">
+                            <label>
+                                <input type="radio" value="b" name="choices4" id="radio2.4"> B) .example
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices4', 'radio3.4')">
+                            <label>
+                                <input type="radio" value="c" name="choices4" id="radio3.4"> C) element.example
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices4', 'radio4.4')">
+                            <label>
+                                <input type="radio" value="d" name="choices4" id="radio4.4"> D) select.example
+                            </label>
+                        </div>
+                    </div>
+                    <p class="answer"></p>
+                </div>
+                <div class="subnext">
+                    <button id="submit-btn"  onclick="submitAnswer(4)">Submit</button>
+                    <button id="next-btn" onclick="questionTransition(5)">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-container overlay5 post" id="question5">
+            <h1>Quiz</h1>
+            <div id="timer5" class="timer"></div><br>
+            <div class="quiz">
+                <h2 id="question">5. Which attribute is used to provide an alternative text for an image in HTML?</h2>
+                <div class="answerBtn">
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices5', 'radio1.5')">
+                            <label>
+                                <input type="radio" value="a" name="choices5" id="radio1.5"> A) alt
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices5', 'radio2.5')">
+                            <label>
+                                <input type="radio" value="b" name="choices5" id="radio2.5"> B) description
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btngroup">
+                        <div class="btn" onclick="activateRadio('choices5', 'radio3.5')">
+                            <label>
+                                <input type="radio" value="c" name="choices5" id="radio3.5"> C) text
+                            </label>
+                        </div>
+                        <div class="btn" onclick="activateRadio('choices5', 'radio4.5')">
+                            <label>
+                                <input type="radio" value="d" name="choices5" id="radio4.5"> D) img-alt
+                            </label>
+                        </div>
+                    </div>
+                    <p class="answer"></p>
+                </div>
+                <div class="subnext">
+                    <button id="submit-btn" onclick="submitAnswer(5)">Submit</button>
+                    <button id="next-btn" onclick="Score()">Done</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="main.js">    </script>
+</body>
+</html>
