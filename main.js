@@ -114,43 +114,5 @@ function disableRadioButtons(groupName) {
 }
 
 function restart() {
-    // Reset timer
-    clearInterval(timer);
-
-    // Reset selected answers
-    selectedAnswers = {};
-
-    // Reset configurations and styles
-    resetStyles();
-
-    // Transition to the first question
-    transitionOfOverlays(6, 1);
-    startTimer('timer1', 1);
-}
-
-function resetStyles() {
-    // Enable radio buttons
-    for (let i = 1; i <= 5; i++) {
-        enableRadioButtons(`choices${i}`);
-    }
-
-    // Reset answer texts
-    for (let i = 1; i <= 5; i++) {
-        const answerElement = document.querySelector(`.overlay${i} .answer`);
-        answerElement.textContent = '';
-    }
-
-
-    // Remove any added classes
-    const overlays = document.querySelectorAll('.quiz-container');
-    overlays.forEach((overlay) => {
-        overlay.style.display = 'none';
-        overlay.style.animationName = '';
-    });
-}
-function enableRadioButtons(groupName) {
-    const radioButtons = document.getElementsByName(groupName);
-    for (let i = 0; i < radioButtons.length; i++) {
-        radioButtons[i].disabled = false;
-    }
+    window.location.reload();
 }
